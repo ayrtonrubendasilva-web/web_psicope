@@ -1,0 +1,1452 @@
+
+/* =================================
+   1. VARIABLES Y CONFIGURACIÓN
+================================= */
+
+:root {
+    --sage: #A8B5A0;
+    --cream: #F5F0E8;
+    --beige: #D9C8B8;
+    --white: #FFFFFF;
+    --dark: #45483F;
+    --text: #66675F;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: var(--dark);
+}
+
+
+/* =================================
+   2. NAVEGACIÓN
+================================= */
+
+.navbar {
+    min-height: 90px;
+    padding: 20px 6%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: var(--white);
+}
+
+.logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    color: var(--dark);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.logo span {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 10px;
+    letter-spacing: 3px;
+    margin-top: 4px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #84917C;
+}
+
+.nav-button,
+.primary-button {
+    background: var(--sage);
+    color: var(--white);
+    padding: 14px 24px;
+    text-decoration: none;
+    border-radius: 4px;
+    display: inline-block;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.nav-button:hover,
+.primary-button:hover {
+    background: var(--dark);
+}
+
+
+/* =================================
+   3. PRESENTACIÓN PRINCIPAL
+================================= */
+
+.hero {
+    min-height: 620px;
+    padding: 90px 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: #84917C;
+    font-weight: 600;
+}
+
+.hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(42px, 5vw, 66px);
+    line-height: 1.15;
+    margin: 25px 0;
+    font-weight: 400;
+}
+
+.hero h1 span {
+    color: #87977F;
+    font-style: italic;
+}
+
+.hero-content p {
+    color: var(--text);
+    line-height: 1.8;
+    max-width: 470px;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    flex-wrap: wrap;
+}
+
+.secondary-button {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: auto;
+    overflow: visible;
+}
+
+.hero-image img {
+    width: 100%;
+    max-width: 390px;
+    height: auto;
+    max-height: 520px;
+    object-fit: contain;
+    display: block;
+
+    /* Marco */
+    border: 10px solid #FFFFFF;
+    outline: 1px solid #D9C8B8;
+
+    /* Forma */
+    border-radius: 170px 170px 8px 8px;
+
+    /* Sombra elegante */
+    box-shadow: 0 15px 40px rgba(69, 72, 63, 0.13);
+}
+
+
+/* =================================
+   4. INTRODUCCIÓN
+================================= */
+
+.intro {
+    background: var(--white);
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.intro h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin: 25px 0;
+}
+
+.intro p {
+    max-width: 650px;
+    margin: auto;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+
+/* =================================
+   5. SERVICIOS
+================================= */
+
+.home-services {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.home-services h2,
+.home-contact h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 400;
+    margin: 20px 0;
+}
+
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 22px;
+    margin-top: 50px;
+    text-align: left;
+}
+
+.service-card {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 5px;
+    border: 1px solid #E8E3DA;
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin-bottom: 15px;
+}
+
+.service-card p {
+    color: var(--text);
+    line-height: 1.7;
+}
+
+.service-card a {
+    display: inline-block;
+    margin-top: 20px;
+    color: #84917C;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+
+/* =================================
+   6. CONTACTO
+================================= */
+
+.home-contact {
+    background: var(--white);
+    text-align: center;
+    padding: 90px 10%;
+}
+
+.home-contact p {
+    margin-bottom: 25px;
+    color: var(--text);
+    line-height: 1.8;
+}
+
+
+/* =================================
+   7. PIE DE PÁGINA
+================================= */
+
+.footer {
+    background: var(--dark);
+    color: white;
+    text-align: center;
+    padding: 30px;
+    font-size: 13px;
+    line-height: 2;
+}
+
+
+/* =================================
+   8. RESPONSIVE
+================================= */
+
+@media (max-width: 1100px) {
+
+    .navbar {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+}
+
+@media (max-width: 768px) {
+
+    .navbar {
+        padding: 20px 5%;
+    }
+
+    .nav-links {
+        gap: 15px;
+    }
+
+    .nav-button {
+        display: none;
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+        gap: 40px;
+    }
+
+    .hero-image img {
+        height: 350px;
+    }
+
+    .hero-buttons {
+        align-items: flex-start;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .intro,
+    .home-services,
+    .home-contact {
+        padding: 70px 7%;
+    }
+
+    .intro h2,
+    .home-services h2,
+    .home-contact h2 {
+        font-size: 32px;
+    }
+
+}
+
+
+/* =================================
+   SOBRE MI - PRESENTACIÓN
+================================= */
+
+.about-hero {
+    padding: 100px 10%;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    gap: 80px;
+}
+
+.about-photo {
+    display: flex;
+    justify-content: center;
+}
+
+.about-photo img {
+    width: 100%;
+    max-width: 390px;
+    max-height: 520px;
+    object-fit: contain;
+    border: 10px solid var(--white);
+    outline: 1px solid var(--beige);
+    border-radius: 170px 170px 8px 8px;
+    box-shadow: 0 15px 40px rgba(69,72,63,0.13);
+}
+
+.about-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 4vw, 55px);
+    font-weight: 400;
+    line-height: 1.2;
+    margin: 25px 0;
+}
+
+.about-content h1 span {
+    display: block;
+    color: #87977F;
+    font-style: italic;
+}
+
+.about-content h3 {
+    font-size: 17px;
+    margin-bottom: 8px;
+}
+
+.professional-number {
+    display: block;
+    color: var(--text);
+    font-size: 13px;
+    margin-bottom: 25px;
+}
+
+.about-content p {
+    color: var(--text);
+    line-height: 1.9;
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   RECORRIDO PROFESIONAL
+================================= */
+
+.about-career {
+    padding: 100px 10%;
+    background: var(--white);
+}
+
+.section-heading {
+    text-align: center;
+    max-width: 700px;
+    margin: auto;
+}
+
+.section-heading h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    font-weight: 400;
+    margin: 25px 0;
+}
+
+.section-heading p {
+    color: var(--text);
+    line-height: 1.8;
+}
+
+.career-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.career-card {
+    padding: 35px;
+    background: var(--cream);
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.career-card:hover {
+    transform: translateY(-5px);
+}
+
+.career-number {
+    color: #84917C;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.career-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    margin: 25px 0 15px;
+}
+
+.career-card p {
+    color: var(--text);
+    line-height: 1.8;
+}
+
+
+
+/* =================================
+   MI MIRADA PSICOPEDAGÓGICA
+================================= */
+
+.about-philosophy {
+    background: var(--cream);
+    padding: 110px 8%;
+    text-align: center;
+}
+
+.philosophy-content {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.about-philosophy h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 4vw, 48px);
+    font-weight: 400;
+    line-height: 1.25;
+    margin: 28px auto;
+    color: var(--dark);
+}
+
+.about-philosophy p {
+    max-width: 680px;
+    margin: 0 auto;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 2;
+}
+
+/* VERSIÓN MÓVIL */
+
+@media (max-width: 768px) {
+    .about-philosophy {
+        padding: 75px 7%;
+    }
+
+    .about-philosophy h2 {
+        font-size: 34px;
+    }
+
+    .about-philosophy p {
+        font-size: 15px;
+    }
+}
+
+
+
+
+/* =================================
+   MI COMPROMISO
+================================= */
+
+.about-commitment {
+    background: var(--beige);
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.about-commitment .eyebrow {
+    color: var(--dark);
+}
+
+.about-commitment h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 400;
+    line-height: 1.3;
+    max-width: 750px;
+    margin: 28px auto;
+    color: var(--dark);
+}
+
+.about-commitment p {
+    color: var(--dark);
+    font-size: 16px;
+    line-height: 1.9;
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.commitment-decoration {
+    max-width: 650px;
+    margin: 45px auto 0;
+    padding-top: 30px;
+    border-top: 1px solid rgba(69, 72, 63, 0.2);
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-style: italic;
+    line-height: 1.6;
+    color: var(--dark);
+}
+
+@media (max-width: 768px) {
+    .about-commitment {
+        padding: 75px 7%;
+    }
+
+    .about-commitment h2 {
+        font-size: 34px;
+    }
+
+    .commitment-decoration {
+        font-size: 20px;
+    }
+}
+
+
+/* =================================
+   RESPONSIVE SOBRE MI
+================================= */
+
+@media (max-width: 768px) {
+
+    .about-hero {
+        grid-template-columns: 1fr;
+        padding: 65px 7%;
+        gap: 45px;
+    }
+
+    .about-photo img {
+        max-width: 330px;
+    }
+
+    .career-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-career {
+        padding: 75px 7%;
+    }
+
+    .about-philosophy,
+    .about-commitment {
+        padding: 75px 7%;
+    }
+
+    .about-philosophy h2,
+    .about-commitment h2 {
+        font-size: 33px;
+    }
+
+    .section-heading h2 {
+        font-size: 34px;
+    }
+
+}
+
+
+/* Ajustes visuales de Sobre mí */
+
+.about-hero {
+    min-height: 650px;
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.about-career {
+    padding-top: 75px;
+}
+
+.nav-links a.active {
+    color: #84917C;
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: #A8B5A0;
+    margin-top: 5px;
+}
+
+
+/* Mejoras para las tarjetas del recorrido */
+
+.career-card {
+    min-height: 205px;
+    padding: 35px 32px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.career-number {
+    display: block;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    letter-spacing: 3px;
+    color: #84917C;
+    margin-bottom: 18px;
+}
+
+.career-card h3 {
+    margin: 0 0 15px;
+}
+
+.career-card p {
+    margin: 0;
+}
+
+.home-contact {
+    padding: 75px 8%;
+}
+
+.home-contact h2 {
+    margin-bottom: 18px;
+}
+
+.home-contact p {
+    margin-bottom: 25px;
+}
+
+
+/* =================================
+   SERVICIOS - PRESENTACIÓN
+================================= */
+
+.services-hero {
+    background: var(--cream);
+    padding: 120px 10%;
+    text-align: center;
+    min-height: 430px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.services-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 1.2;
+    max-width: 800px;
+    margin: 25px auto;
+    color: var(--dark);
+}
+
+.services-hero h1 span {
+    display: block;
+    color: #84917C;
+    font-style: italic;
+}
+
+.services-hero p {
+    max-width: 650px;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+    .services-hero {
+        padding: 85px 7%;
+    }
+
+    .services-hero h1 {
+        font-size: 38px;
+    }
+}
+
+
+/* =================================
+   LISTADO DE SERVICIOS
+================================= */
+
+.services-list {
+    padding: 100px 10%;
+    background: var(--white);
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.service-card {
+    background: var(--cream);
+    padding: 35px;
+    min-height: 230px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-number {
+    color: #84917C;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.service-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 22px;
+    font-weight: 500;
+    margin: 25px 0 15px;
+    color: var(--dark);
+}
+
+.service-card p {
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .services-list {
+        padding: 75px 7%;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Uniformidad de tarjetas de servicios */
+
+.service-card {
+    min-height: 245px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.service-card h3 {
+    min-height: 55px;
+    display: flex;
+    align-items: center;
+}
+
+
+/* =================================
+   PROCESO DE ACOMPAÑAMIENTO
+================================= */
+
+.service-process {
+    padding: 100px 10%;
+    background: var(--cream);
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 65px;
+}
+
+.process-step {
+    border-top: 1px solid var(--beige);
+    padding-top: 25px;
+}
+
+.process-step span {
+    color: #84917C;
+    font-size: 14px;
+    letter-spacing: 3px;
+}
+
+.process-step h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 500;
+    margin: 22px 0 15px;
+    color: var(--dark);
+}
+
+.process-step p {
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+@media (max-width: 900px) {
+    .process-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .service-process {
+        padding: 75px 7%;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+}
+
+
+/* =================================
+   CIERRE DE SERVICIOS
+================================= */
+
+.services-contact {
+    background: var(--beige);
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.services-contact h2 {
+    max-width: 750px;
+    margin: 28px auto;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--dark);
+}
+
+.services-contact p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    color: var(--text);
+    line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+    .services-contact {
+        padding: 75px 7%;
+    }
+
+    .services-contact h2 {
+        font-size: 34px;
+    }
+}
+
+
+/* =================================
+   ACOMPAÑAMIENTO - PRESENTACIÓN
+================================= */
+
+.accompaniment-hero {
+    background: var(--cream);
+    padding: 120px 10%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.accompaniment-hero h1 {
+    max-width: 850px;
+    margin: 25px auto;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--dark);
+}
+
+.accompaniment-hero h1 span {
+    display: block;
+    color: #84917C;
+    font-style: italic;
+}
+
+.accompaniment-hero p {
+    max-width: 680px;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+    .accompaniment-hero {
+        padding: 85px 7%;
+        min-height: 430px;
+    }
+
+    .accompaniment-hero h1 {
+        font-size: 38px;
+    }
+}
+
+
+/* =================================
+   ESPACIOS DE ACOMPAÑAMIENTO
+================================= */
+
+.accompaniment-list {
+    padding: 100px 10%;
+    background: var(--white);
+}
+
+.accompaniment-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.accompaniment-card {
+    background: var(--cream);
+    padding: 35px;
+    border-radius: 6px;
+    min-height: 300px;
+    transition: transform 0.3s ease;
+}
+
+.accompaniment-card:hover {
+    transform: translateY(-5px);
+}
+
+.accompaniment-number {
+    color: #84917C;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.accompaniment-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--dark);
+    margin: 22px 0 15px;
+}
+
+.accompaniment-card p {
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.accompaniment-card ul {
+    padding-left: 18px;
+    margin-top: 20px;
+}
+
+.accompaniment-card li {
+    color: var(--text);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+@media (max-width: 900px) {
+    .accompaniment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .accompaniment-list {
+        padding: 75px 7%;
+    }
+
+    .accompaniment-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =================================
+   DISTRIBUCIÓN DE TARJETAS
+================================= */
+
+.accompaniment-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 25px;
+}
+
+/* Primera fila: tres tarjetas */
+
+.accompaniment-card:nth-child(1),
+.accompaniment-card:nth-child(2),
+.accompaniment-card:nth-child(3) {
+    grid-column: span 2;
+}
+
+/* Segunda fila: dos tarjetas centradas */
+
+.accompaniment-card:nth-child(4) {
+    grid-column: 2 / span 2;
+    margin: 0;
+    width: auto;
+}
+
+.accompaniment-card:nth-child(5) {
+    grid-column: 4 / span 2;
+    margin: 0;
+    width: auto;
+}
+
+/* Tablets */
+
+@media (max-width: 900px) {
+    .accompaniment-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .accompaniment-card:nth-child(n) {
+        grid-column: auto;
+        margin: 0;
+        width: auto;
+    }
+}
+
+/* Celulares */
+
+@media (max-width: 600px) {
+    .accompaniment-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* =================================
+   CIERRE DE ACOMPAÑAMIENTO
+================================= */
+
+.accompaniment-contact {
+    background: var(--beige);
+    padding: 100px 8%;
+    text-align: center;
+}
+
+.accompaniment-contact h2 {
+    max-width: 750px;
+    margin: 28px auto;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(34px, 4vw, 46px);
+    font-weight: 400;
+    line-height: 1.3;
+    color: var(--dark);
+}
+
+.accompaniment-contact p {
+    max-width: 620px;
+    margin: 0 auto 30px;
+    color: var(--text);
+    line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+    .accompaniment-contact {
+        padding: 75px 7%;
+    }
+
+    .accompaniment-contact h2 {
+        font-size: 34px;
+    }
+}
+
+
+/* =================================
+   RECURSOS - PRESENTACIÓN
+================================= */
+
+.resources-hero {
+    background: var(--cream);
+    padding: 120px 10%;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.resources-hero h1 {
+    max-width: 900px;
+    margin: 25px auto;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(40px, 5vw, 58px);
+    font-weight: 400;
+    line-height: 1.2;
+    color: var(--dark);
+}
+
+.resources-hero h1 span {
+    display: block;
+    color: #84917C;
+    font-style: italic;
+}
+
+.resources-hero p {
+    max-width: 680px;
+    color: var(--text);
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+@media (max-width: 768px) {
+    .resources-hero {
+        padding: 85px 7%;
+        min-height: 430px;
+    }
+
+    .resources-hero h1 {
+        font-size: 38px;
+    }
+}
+
+
+/* =================================
+   CATEGORÍAS DE RECURSOS
+================================= */
+
+.resources-list {
+    padding: 100px 10%;
+    background: var(--white);
+}
+
+.resources-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.resource-card {
+    background: var(--cream);
+    padding: 35px;
+    min-height: 260px;
+    border-radius: 6px;
+    transition: transform 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+}
+
+.resource-card > span {
+    color: #84917C;
+    font-size: 13px;
+    letter-spacing: 3px;
+}
+
+.resource-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 23px;
+    font-weight: 500;
+    color: var(--dark);
+    margin: 25px 0 15px;
+}
+
+.resource-card p {
+    color: var(--text);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.resource-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #84917C;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.resource-card a:hover {
+    color: var(--dark);
+}
+
+@media (max-width: 900px) {
+    .resources-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .resources-list {
+        padding: 75px 7%;
+    }
+
+    .resources-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Alinear enlaces de recursos */
+
+.resource-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-card a {
+    margin-top: auto;
+    padding-top: 18px;
+    align-self: flex-start;
+}
+
+
+/* =================================
+   DETALLE DE RECURSOS
+================================= */
+
+.resource-details {
+    padding: 40px 10% 100px;
+    background: var(--cream);
+}
+
+.resource-detail {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 65px 55px;
+    border-bottom: 1px solid var(--beige);
+    scroll-margin-top: 30px;
+}
+
+.resource-detail h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 36px;
+    font-weight: 400;
+    color: var(--dark);
+    margin: 22px 0;
+}
+
+.resource-detail > p {
+    color: var(--text);
+    line-height: 1.9;
+    font-size: 16px;
+}
+
+.resource-tip {
+    background: var(--white);
+    padding: 25px 30px;
+    margin-top: 30px;
+    border-left: 3px solid var(--sage);
+}
+
+.resource-tip h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+    font-weight: 500;
+    margin-bottom: 12px;
+    color: var(--dark);
+}
+
+.resource-tip p {
+    color: var(--text);
+    line-height: 1.8;
+    margin: 0;
+}
+
+@media (max-width: 600px) {
+    .resource-details {
+        padding: 30px 7% 70px;
+    }
+
+    .resource-detail {
+        padding: 45px 10px;
+    }
+
+    .resource-detail h2 {
+        font-size: 30px;
+    }
+
+    .resource-tip {
+        padding: 22px;
+    }
+}
+
+
+/* =================================
+   ACTIVIDADES PRÁCTICAS
+================================= */
+
+.home-activities {
+    padding: 100px 10%;
+    background: var(--white);
+}
+
+.activities-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+    margin-top: 60px;
+}
+
+.activity-card {
+    background: var(--cream);
+    padding: 35px;
+    border-radius: 6px;
+    min-height: 280px;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.activity-card:hover {
+    transform: translateY(-5px);
+}
+
+.activity-category {
+    color: #84917C;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+}
+
+.activity-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 25px;
+    font-weight: 500;
+    color: var(--dark);
+    margin: 22px 0 15px;
+}
+
+.activity-card > p {
+    color: var(--text);
+    font-size: 15px;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.activity-info {
+    margin-top: auto;
+    padding-top: 18px;
+    border-top: 1px solid var(--beige);
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.activity-info strong {
+    color: var(--dark);
+    font-size: 14px;
+}
+
+.activity-info span {
+    color: var(--text);
+    font-size: 14px;
+}
+
+.activities-note {
+    max-width: 700px;
+    margin: 55px auto 0;
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-style: italic;
+    font-size: 20px;
+    line-height: 1.7;
+    color: var(--dark);
+}
+
+@media (max-width: 768px) {
+    .home-activities {
+        padding: 75px 7%;
+    }
+
+    .activities-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .activity-card {
+        min-height: 250px;
+    }
+}
